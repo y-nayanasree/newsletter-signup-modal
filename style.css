@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.page {
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+    padding: 45px 30px;
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+h1, h2 {
+    color: #30245f;
+    margin-bottom: 15px;
+}
+
+.page p, .modal-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.primary-btn {
+    border: none;
+    border-radius: 10px;
+    background: #6c5ce7;
+    color: white;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.primary-btn:hover {
+    background: #5142c5;
+    transform: translateY(-2px);
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s, visibility 0.25s;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 18, 45, 0.7);
+}
+
+.modal-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 440px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    padding: 35px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    transform: translateY(15px);
+    transition: transform 0.25s;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 17px;
+    border: none;
+    background: transparent;
+    color: #777;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #222;
+}
+
+form {
+    text-align: left;
+}
+
+label {
+    display: block;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+input[type="email"]:focus {
+    outline: 2px solid #8b7cf6;
+    border-color: transparent;
+}
+
+form .primary-btn {
+    width: 100%;
+}
+
+.error-message {
+    color: #d93025;
+    font-size: 13px;
+    margin: -5px 0 12px;
+}
+
+.success-message {
+    color: #18864b;
+    font-weight: bold;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+    .page {
+        padding: 35px 20px;
+    }
+
+    .modal-content {
+        padding: 35px 22px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+}
